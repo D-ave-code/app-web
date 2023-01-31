@@ -1,0 +1,1 @@
+docker build -t jaimesalvador/app-web:1.0.0 .
