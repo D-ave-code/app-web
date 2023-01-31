@@ -1,6 +1,6 @@
-package com.programacion.services;
+package com.distribuida.services;
 
-import com.programacion.db.Book;
+import com.distribuida.db.Book;
 
 import java.util.List;
 

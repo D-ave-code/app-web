@@ -1,15 +1,14 @@
-package com.programacion;
-import com.programacion.db.Author;
-import com.programacion.db.Book;
-import com.programacion.services.ServiceAuthor;
-import com.programacion.services.ServiceBook;
+package com.distribuida;
+import com.distribuida.db.Author;
+import com.distribuida.db.Book;
+import com.distribuida.services.ServiceAuthor;
+import com.distribuida.services.ServiceBook;
 import jakarta.enterprise.inject.Instance;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import spark.ModelAndView;
 import spark.template.thymeleaf.ThymeleafTemplateEngine;
 
-import java.math.BigDecimal;
 import java.util.*;
 
 import static spark.Spark.*;
@@ -20,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         container = SeContainerInitializer.newInstance().initialize();
 
-       // routesAuthors();
+       routesAuthors();
        routesBooks();
     }
 

@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
     id "io.freefair.lombok" version "6.5.0.2"
 }
 
@@ -8,6 +9,9 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+ext {
+    mainClass = 'com.distribuida.Main'
 }
 
 dependencies {
@@ -40,9 +44,27 @@ dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
 
 }
+task copyLibs(type: Copy) {
+    from configurations.runtimeClasspath
+    into 'build/libs/libs'
+}
+jar {
+    archiveFileName = "${project.name}.jar"
+    manifest {
+        attributes('Main-Class': "${project.mainClass}",
+                'Class-Path': configurations.runtimeClasspath.files.collect { "libs/$it.name" }.join(' ')
+        )
+    }
+}
+
+copyLibs.dependsOn jar
+assemble.dependsOn copyLibs
 
 sourceSets {
     main {
         output.resourcesDir = file("${buildDir}/classes/java/main")
     }
+}
+application {
+    mainClass = "${project.mainClass}"
 }

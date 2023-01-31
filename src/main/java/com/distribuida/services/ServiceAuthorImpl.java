@@ -1,8 +1,8 @@
-package com.programacion.services;
+package com.distribuida.services;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.programacion.db.Author;
+import com.distribuida.db.Author;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import jakarta.ws.rs.client.Client;

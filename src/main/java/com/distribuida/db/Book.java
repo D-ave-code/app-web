@@ -1,10 +1,8 @@
-package com.programacion.db;
+package com.distribuida.db;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.math.BigDecimal;
 
 @XmlRootElement(name="book")
 public class Book {

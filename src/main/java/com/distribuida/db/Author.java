@@ -1,4 +1,4 @@
-package com.programacion.db;
+package com.distribuida.db;
 
 import jakarta.xml.bind.annotation.XmlRootElement;
 import lombok.Getter;

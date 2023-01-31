@@ -1,6 +1,6 @@
-package com.programacion.services;
+package com.distribuida.services;
 
-import com.programacion.db.Author;
+import com.distribuida.db.Author;
 
 import java.util.List;
 

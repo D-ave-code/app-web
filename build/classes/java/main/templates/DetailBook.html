@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+    <div class="row text-center">
+        <div class="col">
+            <form>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th>foto</th>
+                        <th>isbn</th>
+                        <th>author_id</th>
+                        <th>price</th>
+                        <th>title</th>
+
+
+                    </tr>
+                    <tr th:each="book: ${books}">
+                       <td><img style="width: 32px; height: 32px" src="https://www3.gobiernodecanarias.org/medusa/mediateca/ecoescuela/wp-content/uploads/sites/2/2013/11/11-Libro.png"  ></td>
+                        <td><p th:text="${book.getIsbn}"></p></td>
+                        <td><p th:text="${book.getAuthor_id}"></p></td>
+                        <td><p th:text="${book.getPrice}"></p></td>
+                        <td><p th:text="${book.getTitle}"></p></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+                <a th:href="'/books'" class="btn btn-primary">Regresar</a>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>
